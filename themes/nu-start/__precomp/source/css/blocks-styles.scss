@@ -1,0 +1,30 @@
+/** 
+*	? hooked to enqueue_block_editor_assets
+*	? this means only loaded in block editor
+*	! THERES A GOOD CHANCE WE JUST PLAIN DONT NEED THIS FILE
+*/
+
+
+.edit-post-visual-editor {
+	
+	
+	.wp-block-cover__inner-container {
+		position: static;
+
+		div.wp-block[data-type="acf/breadcrumbs"] {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			padding-left: 10%;
+		}
+	}
+
+	// the editor styles are resetting box sizing for some elems
+	.editor-styles-wrapper {
+		box-sizing: border-box;
+		ul,
+		ol {
+			box-sizing: border-box;
+		}
+	}
+}

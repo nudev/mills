@@ -1,0 +1,53 @@
+/* 
+
+*/
+
+
+.nu_posts-grid .nu__grid .grid-item.nu_events {
+	.nu__datetime {
+		@extend %nu__datetime_blockstyle;
+	}
+
+	figure {
+		@include aspect-ratio(3, 4);
+	}
+
+	@extend %nu__grid_item_cover_ratios;
+	@extend %nu__grid_item_orientation;
+
+	
+	.post-date {
+		font-size: smaller;
+		@include nu_micon("\e8b5", before);
+		&:before {
+			margin-right: ($base-margin * 0.5);
+		}
+	}
+
+	> a {
+		border: none 0;
+
+		display: flex;
+		.post-title span {
+			border-bottom: 2px solid transparent;
+		}
+		figure {
+			overflow: hidden;
+		}
+		img {
+			@extend %transition;
+			transform: scale(1);
+		}
+		&:hover,
+		&:focus,
+		&:active {
+			.post-title span {
+				border-bottom: 2px solid currentColor;
+			}
+			img {
+				transform: scale(1.2);
+			}
+			border: none 0;
+		}
+	}
+}

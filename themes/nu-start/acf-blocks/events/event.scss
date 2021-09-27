@@ -1,0 +1,21 @@
+// 
+// 
+@import '../../__precomp/source/css/library/';
+
+.blocks--wrapper > .wp-block-acf-nu-event {
+	margin-top: 0;
+}
+
+.nu_event {
+
+
+	>  div {
+		@extend %base_blocks_container;
+
+		>.wp-block-cover:first-child.alignfull {
+			margin-top: 0;
+		}
+	}
+	
+
+}

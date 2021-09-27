@@ -1,0 +1,78 @@
+/* 
+? 	page height always fills viewport using flexbox
+*/
+html {
+    height: 100%;
+}
+body {
+    min-height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    > header,
+    > footer {
+        flex: none 0;
+    }
+    > main {
+        flex: 1 0 auto;
+        margin-top: $headerHeight; // default values
+    }
+}
+
+// 
+// 
+// 
+%base_blocks_container {
+	max-width: 100%;
+	width: 100%;
+	> * {
+		margin-top: $margin_8x;
+		max-width: 80%;
+		@media screen and (max-width: 640px){
+			max-width: 90%;
+		}
+		margin-left: auto;
+		margin-right: auto;
+		&.alignwide {
+			max-width: 90%;
+		}
+		&.alignfull {
+			max-width: 100%;
+		}
+		&.is-reusable {
+			max-width: 100%;
+		}
+	}
+	> p {
+		margin-top: $base-margin;
+	}
+
+	>.wp-block-paragraph {
+		margin: $base-margin auto 0 auto;
+		&:first-child {
+			margin-top: $margin_8x;
+		}
+	}
+}
+%fix_nested_base_blocks_container {
+	> * {
+		max-width: 100%;
+	}
+}
+
+// note that theme.json values aren't on the front end; so reference those "hidden vars" in a  sense
+.blocks--wrapper {
+	@extend %base_blocks_container;
+}
+
+// ? this appears to be the top level container class and does not appear more than once with a post list grid loaded
+.block-editor-writing-flow {
+	// ? note that this selector appears within nested content levels as well (sad face)
+	> .block-editor-block-list__layout.is-root-container {
+		@extend %base_blocks_container;
+	}
+	.wp-block-query {
+		.block-editor-block-list__layout.is-root-container {
+			@extend %fix_nested_base_blocks_container;
+		}
+	}
+}

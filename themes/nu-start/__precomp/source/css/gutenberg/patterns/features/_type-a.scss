@@ -1,0 +1,47 @@
+/* 
+
+	NU Patterns
+	- Feature Category
+	- - Pattern "is_type_a"
+
+	? This file takes the KNOWN pattern; which is intended to be developed into a LOCKED TEMPLATE, and styles it.
+	? This is tightly coupled and will break on changes in the editor
+	? Until we move to start really templating; this should be AS MINIMAL AS POSSIBLE.
+
+	* prebuilding patterns is very easily and flexible; and we can massage the 'correct' choice of blocks this way before 'hardening' things into a template.
+	
+*/
+
+// 
+.nu_pattern-is_feature--is_type_a {
+	padding: $margin_4x;
+	padding-bottom: 0;
+	> .wp-block-columns {
+		margin: 0;
+		&:first-child {
+			.wp-block-column:last-child {
+				display: flex;
+				.wp-block-group {
+					margin-left: auto;
+					margin-right: 0 !important;
+					min-width: 60%;
+				}
+			}
+		}
+		.wp-block-buttons {
+			margin-bottom: -#{$margin_4x};
+			flex-wrap: nowrap;
+		}
+	}
+	
+	@media screen and (max-width: 1024px) {
+		padding: $margin_2x;
+		padding-bottom: 0;
+		> .wp-block-columns:last-child {
+			> .wp-block-column:last-child {
+				margin-left: 0;		
+				flex-basis: 100% !important;
+			}
+		}
+	}
+}

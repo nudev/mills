@@ -1,0 +1,12 @@
+.nu_pattern-is_hero_banner--type-b {
+	
+	.wp-block-column {
+		p {
+			margin: $margin_2x 0 0 0;
+		}
+		> p:first-child, h2 {
+			margin: 0;
+		}
+	}
+	
+}

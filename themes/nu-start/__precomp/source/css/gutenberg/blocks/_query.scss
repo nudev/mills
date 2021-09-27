@@ -1,0 +1,31 @@
+.wp-block-query{
+
+	// ? handle program specific styling
+	&.nu_programs > ul {
+
+		
+		li {
+			padding: $base-margin;
+			border: 1px solid currentColor;
+		}
+		&:not(.is-flex-container){
+
+			li {
+				&:not(:first-child){
+					margin-top: $base-margin;
+				}
+			}
+			
+
+			.wp-block-post-excerpt {
+				// margin-left: 5%;
+			}
+			
+		}
+		
+		// this is how gutenberg is doing grid view
+		&.is-flex-container {
+		}
+		
+	}
+}

@@ -1,0 +1,53 @@
+/* 
+	block styles for group here,
+	just that.
+*/
+
+.wp-block-columns {
+
+	&.is-style-flex-justify-space-between {
+		justify-content: space-between;
+	}
+}
+.wp-block-column {
+	
+}
+// extra specificity
+.wp-block-columns {
+	.wp-block-column {
+	
+	}
+}
+
+
+
+
+
+
+// ! there is no vertical margin in WP-Core (at this time) for the fully stacked view
+@media screen and (max-width: 600px) {
+	.wp-block-columns {
+		> .wp-block-column {
+			margin: $base-margin 0 0 0;
+			&:first-child {
+				margin: 0;
+			}
+		}
+	}
+}
+
+// ! this breakpoint is used by WP-Core and must be overridden
+@media (min-width: 600px) and (max-width: 781px) {
+	.wp-block-columns:not(.is-not-stacked-on-mobile)
+		> .wp-block-column:not(:only-child) {
+		// ? even margin top/bot balances things out, even when the container has padding (no hanging margins, its half on both sides)
+		margin-top: $base-margin * 0.5;
+		margin-bottom: $base-margin * 0.5;
+		// ? "stack" should fill width; but above 781 "stacked" could still be two columns is my interpretation.
+		flex-grow: 1;
+
+		// todo: well, lets try some things below to "stack earlier"
+		flex-basis: auto !important;
+		margin-left: 0;
+	}
+}

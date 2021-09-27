@@ -1,0 +1,717 @@
+{
+    "key": "group_60b64bbe65238",
+    "title": "Block: Posts Grid",
+    "fields": [
+        {
+            "key": "field_60b64c1af5170",
+            "label": "Options",
+            "name": "options",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "acfe_seamless_style": 0,
+            "acfe_group_modal": 0,
+            "acfe_field_group_condition": 0,
+            "sub_fields": [
+                {
+                    "key": "field_60b64c22f5171",
+                    "label": "Columns",
+                    "name": "columns",
+                    "type": "range",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": 3,
+                    "min": 1,
+                    "max": 7,
+                    "step": "",
+                    "prepend": "",
+                    "append": "",
+                    "acfe_field_group_condition": 0
+                },
+                {
+                    "key": "field_60b64c42f5172",
+                    "label": "Show Filter",
+                    "name": "show_filter",
+                    "type": "true_false",
+                    "instructions": "display a filtering form",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "ui": 1,
+                    "ui_on_text": "",
+                    "ui_off_text": "",
+                    "acfe_field_group_condition": 0
+                },
+                {
+                    "key": "field_60b64c49f5173",
+                    "label": "Pagination",
+                    "name": "pagination",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "ui": 1,
+                    "ui_on_text": "",
+                    "ui_off_text": "",
+                    "acfe_field_group_condition": 0
+                },
+                {
+                    "key": "field_60c276d3780be",
+                    "label": "Per Page",
+                    "name": "per_page",
+                    "type": "range",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_60b64c49f5173",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": 3,
+                    "min": 1,
+                    "max": 12,
+                    "step": "",
+                    "prepend": "",
+                    "append": "",
+                    "acfe_field_group_condition": 0
+                },
+                {
+                    "key": "field_60c2520e28a92",
+                    "label": "Autoselect",
+                    "name": "autoselect",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "ui": 1,
+                    "ui_on_text": "",
+                    "ui_off_text": "",
+                    "acfe_field_group_condition": 0
+                }
+            ]
+        },
+        {
+            "key": "field_60b64beef516f",
+            "label": "Select Posts",
+            "name": "select_posts",
+            "type": "relationship",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_60c2520e28a92",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "nu_people",
+                "post",
+                "nu_events",
+                "nu_programs",
+                "nu_faces",
+                "page",
+                "nu_component-demos"
+            ],
+            "taxonomy": "",
+            "filters": [
+                "search",
+                "post_type",
+                "taxonomy"
+            ],
+            "elements": "",
+            "min": "",
+            "max": "",
+            "return_format": "id",
+            "acfe_add_post": 0,
+            "acfe_edit_post": 0,
+            "acfe_bidirectional": {
+                "acfe_bidirectional_enabled": "0"
+            },
+            "acfe_field_group_condition": 0
+        },
+        {
+            "key": "field_60c257da7f635",
+            "label": "Autoselect Posts",
+            "name": "autoselect_posts",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_60c2520e28a92",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "acfe_seamless_style": 0,
+            "acfe_group_modal": 0,
+            "acfe_field_group_condition": 0,
+            "sub_fields": [
+                {
+                    "key": "field_60d208713a1fe",
+                    "label": "Post Type",
+                    "name": "post_type",
+                    "type": "acfe_post_types",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "post",
+                        "nu_events",
+                        "nu_people",
+                        "nu_programs",
+                        "nu_faces",
+                        "nu_component-demos"
+                    ],
+                    "field_type": "select",
+                    "max": "",
+                    "default_value": [],
+                    "return_format": "name",
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 1,
+                    "ajax": 0,
+                    "search_placeholder": "",
+                    "allow_custom": 0,
+                    "acfe_field_group_condition": 0,
+                    "choices": [],
+                    "placeholder": "",
+                    "layout": "",
+                    "toggle": 0
+                },
+                {
+                    "key": "field_60c258147cc96",
+                    "label": "Limit Number",
+                    "name": "limit_number",
+                    "type": "range",
+                    "instructions": "0 = no limit",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_60d208713a1fe",
+                                "operator": "!=empty"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "min": "",
+                    "max": 12,
+                    "step": "",
+                    "prepend": "",
+                    "append": "",
+                    "acfe_field_group_condition": 0
+                },
+                {
+                    "key": "field_6107eb0c31b46",
+                    "label": "Limit From",
+                    "name": "limit_from",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "ui": 1,
+                    "ui_on_text": "Excluding",
+                    "ui_off_text": "Including",
+                    "acfe_field_group_condition": 0
+                },
+                {
+                    "key": "field_60d35d6bd2a16",
+                    "label": "Post Category",
+                    "name": "post_category",
+                    "type": "taxonomy",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_60d208713a1fe",
+                                "operator": "==",
+                                "value": "post"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "taxonomy": "category",
+                    "field_type": "checkbox",
+                    "min": "",
+                    "max": "",
+                    "add_term": 0,
+                    "save_terms": 0,
+                    "load_terms": 0,
+                    "return_format": "id",
+                    "acfe_bidirectional": {
+                        "acfe_bidirectional_enabled": "0"
+                    },
+                    "acfe_field_group_condition": 0,
+                    "multiple": 0,
+                    "allow_null": 0
+                },
+                {
+                    "key": "field_60d35d7ed2a17",
+                    "label": "Post Tags",
+                    "name": "post_tags",
+                    "type": "taxonomy",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_60d208713a1fe",
+                                "operator": "==",
+                                "value": "post"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "taxonomy": "post_tag",
+                    "field_type": "checkbox",
+                    "min": "",
+                    "max": "",
+                    "add_term": 0,
+                    "save_terms": 0,
+                    "load_terms": 0,
+                    "return_format": "id",
+                    "acfe_bidirectional": {
+                        "acfe_bidirectional_enabled": "0"
+                    },
+                    "acfe_field_group_condition": 0,
+                    "multiple": 0,
+                    "allow_null": 0
+                },
+                {
+                    "key": "field_60c258747cc98",
+                    "label": "People Category",
+                    "name": "people_category",
+                    "type": "taxonomy",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_60d208713a1fe",
+                                "operator": "==",
+                                "value": "nu_people"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "taxonomy": "nu_people-categories",
+                    "field_type": "checkbox",
+                    "min": "",
+                    "max": "",
+                    "add_term": 0,
+                    "save_terms": 0,
+                    "load_terms": 0,
+                    "return_format": "id",
+                    "acfe_bidirectional": {
+                        "acfe_bidirectional_enabled": "0"
+                    },
+                    "acfe_field_group_condition": 0,
+                    "multiple": 0,
+                    "allow_null": 0
+                },
+                {
+                    "key": "field_60c258887cc99",
+                    "label": "People Tags",
+                    "name": "people_tags",
+                    "type": "taxonomy",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_60d208713a1fe",
+                                "operator": "==",
+                                "value": "nu_people"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "taxonomy": "nu_people-tags",
+                    "field_type": "checkbox",
+                    "min": "",
+                    "max": "",
+                    "add_term": 0,
+                    "save_terms": 0,
+                    "load_terms": 0,
+                    "return_format": "id",
+                    "acfe_bidirectional": {
+                        "acfe_bidirectional_enabled": "0"
+                    },
+                    "acfe_field_group_condition": 0,
+                    "multiple": 0,
+                    "allow_null": 0
+                },
+                {
+                    "key": "field_60d35e25e9118",
+                    "label": "Events Category",
+                    "name": "events_category",
+                    "type": "taxonomy",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_60d208713a1fe",
+                                "operator": "==",
+                                "value": "nu_events"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "taxonomy": "nu_events-categories",
+                    "field_type": "checkbox",
+                    "min": "",
+                    "max": "",
+                    "add_term": 0,
+                    "save_terms": 0,
+                    "load_terms": 0,
+                    "return_format": "id",
+                    "acfe_bidirectional": {
+                        "acfe_bidirectional_enabled": "0"
+                    },
+                    "acfe_field_group_condition": 0,
+                    "multiple": 0,
+                    "allow_null": 0
+                },
+                {
+                    "key": "field_60d35e20e9117",
+                    "label": "Events Tags",
+                    "name": "events_tags",
+                    "type": "taxonomy",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_60d208713a1fe",
+                                "operator": "==",
+                                "value": "nu_events"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "taxonomy": "nu_events-tags",
+                    "field_type": "checkbox",
+                    "min": "",
+                    "max": "",
+                    "add_term": 0,
+                    "save_terms": 0,
+                    "load_terms": 0,
+                    "return_format": "id",
+                    "acfe_bidirectional": {
+                        "acfe_bidirectional_enabled": "0"
+                    },
+                    "acfe_field_group_condition": 0,
+                    "multiple": 0,
+                    "allow_null": 0
+                },
+                {
+                    "key": "field_60d35e30e9119",
+                    "label": "Programs Category",
+                    "name": "programs_category",
+                    "type": "taxonomy",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_60d208713a1fe",
+                                "operator": "==",
+                                "value": "nu_programs"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "taxonomy": "nu_programs-categories",
+                    "field_type": "checkbox",
+                    "min": "",
+                    "max": "",
+                    "add_term": 0,
+                    "save_terms": 0,
+                    "load_terms": 0,
+                    "return_format": "id",
+                    "acfe_bidirectional": {
+                        "acfe_bidirectional_enabled": "0"
+                    },
+                    "acfe_field_group_condition": 0,
+                    "multiple": 0,
+                    "allow_null": 0
+                },
+                {
+                    "key": "field_60d35e3ce911a",
+                    "label": "Programs Tags",
+                    "name": "programs_tags",
+                    "type": "taxonomy",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_60d208713a1fe",
+                                "operator": "==",
+                                "value": "nu_programs"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "taxonomy": "nu_programs-tags",
+                    "field_type": "checkbox",
+                    "min": "",
+                    "max": "",
+                    "add_term": 0,
+                    "save_terms": 0,
+                    "load_terms": 0,
+                    "return_format": "id",
+                    "acfe_bidirectional": {
+                        "acfe_bidirectional_enabled": "0"
+                    },
+                    "acfe_field_group_condition": 0,
+                    "multiple": 0,
+                    "allow_null": 0
+                }
+            ]
+        },
+        {
+            "key": "field_611e8c90f2592",
+            "label": "Item Style",
+            "name": "item_style",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "acfe_seamless_style": 1,
+            "acfe_group_modal": 0,
+            "acfe_field_group_condition": 0,
+            "sub_fields": [
+                {
+                    "key": "field_612e302ed48ae",
+                    "label": "Display Featured Image",
+                    "name": "display_featured_image",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "ui": 1,
+                    "ui_on_text": "",
+                    "ui_off_text": "",
+                    "acfe_field_group_condition": 0
+                },
+                {
+                    "key": "field_611e8ce3f2594",
+                    "label": "Image Dimensions",
+                    "name": "image_dimensions",
+                    "type": "button_group",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_612e302ed48ae",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "square": "Square",
+                        "tall": "Tall",
+                        "tallest": "Tallest",
+                        "wide": "Wide",
+                        "widest": "Widest"
+                    },
+                    "allow_null": 0,
+                    "default_value": "square",
+                    "layout": "vertical",
+                    "return_format": "value",
+                    "acfe_field_group_condition": 0
+                },
+                {
+                    "key": "field_611e8c98f2593",
+                    "label": "Orientation",
+                    "name": "orientation",
+                    "type": "button_group",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_612e302ed48ae",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "horizontal": "Horizontal",
+                        "vertical": "Vertical"
+                    },
+                    "allow_null": 0,
+                    "default_value": "vertical",
+                    "layout": "horizontal",
+                    "return_format": "value",
+                    "acfe_field_group_condition": 0
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/posts-grid"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "tooltip",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "acfe_autosync": [
+        "json"
+    ],
+    "acfe_form": 0,
+    "acfe_display_title": "",
+    "acfe_meta": "",
+    "acfe_note": "",
+    "acfe_categories": {
+        "acf-block": "ACF Block"
+    },
+    "modified": 1630613089
+}

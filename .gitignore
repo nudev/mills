@@ -1,0 +1,33 @@
+# NOTE: this isn't where we want this repo tracked from so this is temporary
+# 		we should probably track our projects with git in the wp-content directory
+#		git is also going to come baked into the theme and block plugins as part of @wordpress/scripts
+#
+#
+# ignore everything in the wp-content folder to start
+#/*
+
+
+# don't ignore the following specific files/folders
+!.gitignore
+
+
+# don't ignore the plugins directories
+#!plugins/
+#!mu-plugins/
+
+
+# Ignore everything in the "themes" directory, EXCEPT our custom theme
+!themes/nu-start/
+
+#ignore these folders
+cache/
+ewww/
+upgrade/
+wp-rocket-config/
+debug.log
+advanced-cache.php
+uploads/
+plugins/
+mu-plugins/
+
+*.bak

@@ -1,0 +1,1 @@
+!function(e,o,t){e((function(){e(".js__filteringform select").each((function(o,t){var n=e(t).data("placeholder");e(t).select2({placeholder:n,theme:"bootstrap4",minimumResultsForSearch:1/0})}))}))}(window.jQuery,window,document);

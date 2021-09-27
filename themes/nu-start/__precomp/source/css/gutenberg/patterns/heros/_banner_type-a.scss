@@ -1,0 +1,15 @@
+.nu_pattern-is_hero_banner--type-a {
+	
+	.wp-block-column.has-black-background-color.has-background {
+		padding: $margin_2x;
+
+		p {
+			margin: $margin_2x 0 0 0;
+		}
+		> p:first-child, h2 {
+			margin: 0;
+		}
+	}
+
+	
+}

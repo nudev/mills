@@ -1,0 +1,299 @@
+//
+
+%base_blocks_container {
+	max-width: 100%;
+	width: 100%;
+	> * {
+		max-width: 80%;
+		@media screen and (max-width: 640px) {
+			max-width: 90%;
+		}
+		margin-left: auto;
+		margin-right: auto;
+		&.alignwide {
+			max-width: 90%;
+		}
+		&.alignfull {
+			max-width: 100%;
+		}
+		&.is-reusable {
+			max-width: 100%;
+		}
+	}
+
+	> .nu_posts-grid,
+	> .wp-block-query,
+	> .wp-block-cover,
+	> .wp-block-columns,
+	> .wp-block-group,
+	> .wp-block {
+		margin-top: $margin_8x;
+		@media screen and ( max-width: 640px ) {
+			margin-top: $margin_4x;
+		}
+	}
+
+	> .wp-block-paragraph {
+		margin: $base-margin auto 0 auto;
+		&:first-child {
+			margin-top: $margin_8x;
+		}
+	}
+}
+
+%base_body_style {
+	color: $base-color;
+	font-family: $sans-serif;
+	@include font-size(1rem);
+	font-weight: 300;
+	line-height: 1.375;
+	letter-spacing: 0.1px;
+	@media print {
+		font-family: sans-serif;
+	}
+}
+
+
+//
+//
+%nu__grid_item_orientation {
+	&.has-layout-horizontal {
+		&:not(.nu_events) {
+			&.has-layout-horizontal {
+				flex-flow: row nowrap;
+				> figure {
+					flex: 1 1 25%;
+				}
+				> .grid-item-content {
+					flex: 1 1 75%;
+				}
+			}
+		}
+		&.nu_events {
+			> a {
+				flex-flow: row nowrap;
+				> figure {
+					flex: 1 1 25%;
+					margin-right: $margin_2x;
+				}
+				> .grid-item-content {
+					flex: 1 1 75%;
+				}
+			}
+		}
+	}
+}
+%nu__grid_item_cover_ratios {
+	&.has-square-cover-image {
+		figure{
+			@include aspect-ratio(1,1);
+		}
+	}
+	&.has-wide-cover-image {
+		figure{
+			@include aspect-ratio(4,3);
+		}
+	}
+	&.has-very-wide-cover-image {
+		figure{
+			@include aspect-ratio(16,9);
+		}
+	}
+	&.has-tall-cover-image {
+		figure{
+			@include aspect-ratio(3,4);
+		}
+	}
+	&.has-very-tall-cover-image {
+		figure{
+			@include aspect-ratio(9,16);
+		}
+	}
+}
+
+
+
+// may be used outside of a block sadly
+%nu__datetime_blockstyle {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+
+	span {
+		letter-spacing: 0;
+		font-weight: normal;
+	}
+
+	$scheduleIcon: "\e8b5";
+	$eventIcon: "\e878";
+
+	.nu__datetime-times {
+		@include nu_micon($scheduleIcon, before);
+	}
+	.nu__datetime-dates {
+		margin-top: $base-margin;
+		@include nu_micon($eventIcon, before);
+	}
+	.nu__datetime-times, .nu__datetime-dates {
+		margin: 0;
+		&:before {
+			vertical-align: text-bottom;
+			display: inline-block;
+			font-size: 16px;
+			margin-right: ($base-margin * 0.5);
+			line-height: 1;
+		}
+	}
+}
+
+%absolutely_centered {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+
+//
+//
+//
+%nu__gridLayout {
+	$gX: $base-margin;
+	$gY: $base-margin;
+	$w: 100%;
+	@for $n from 1 through 7 {
+		&.cols-#{$n} {
+			@include nuGrid($w, $n, $gX, $gY);
+		}
+	}
+	// max-cols drops to 5
+	@media screen and (max-width: 1620px) {
+		@for $n from 6 through 7 {
+			&.cols-#{$n} {
+				@include nuGrid($w, 5, $gX, $gY);
+			}
+		}
+	}
+
+	// max-cols drops to 4
+	@media screen and (max-width: 1280px) {
+		@for $n from 5 through 7 {
+			&.cols-#{$n} {
+				@include nuGrid($w, 4, $gX, $gY);
+			}
+		}
+	}
+
+	// max-cols drops to 3
+	@media screen and (max-width: 960px) {
+		@for $n from 4 through 7 {
+			&.cols-#{$n} {
+				@include nuGrid($w, 3, $gX, $gY);
+			}
+		}
+	}
+
+	// max-cols drops to 2
+	@media screen and (max-width: 640px) {
+		@for $n from 3 through 7 {
+			&.cols-#{$n} {
+				@include nuGrid($w, 2, $gX, $gY);
+			}
+		}
+	}
+
+	// max-cols drops to 2
+	@media screen and (max-width: 400px) {
+		@for $n from 2 through 7 {
+			&.cols-#{$n} {
+				@include nuGrid($w, 1, $gX, $gY);
+			}
+		}
+	}
+
+	ul {
+		list-style-type: none;
+	}
+}
+
+//
+//
+//
+%transition {
+	transition: all 0.1s ease-in-out;
+}
+
+//
+//
+//
+%alt_link {
+	color: $base-color;
+	font-weight: 400;
+
+	&:hover {
+		color: $highlight;
+		text-decoration: none;
+	}
+}
+
+//
+//
+//
+%nu__buttonstyle {
+	@extend %transition;
+
+	border-radius: 0;
+	border: 2px solid transparent;
+	box-shadow: none;
+	cursor: pointer;
+	display: inline-block;
+	// font-size: 1.125em;
+	// padding: 0.667em 1.333em;
+	text-align: center;
+	text-decoration: none;
+	overflow-wrap: break-word;
+	margin: 0.5em 0.5em 0.5em 0;
+	min-height: none 0;
+	font-weight: normal;
+	letter-spacing: 0.2px;
+	// line-height: 1.15;
+	font-size: .875rem;
+	line-height: 1.25rem;
+	padding: .625rem 1rem;
+
+	border: 2px solid $black;
+	background-color: $black;
+	color: $white;
+
+	&:hover {
+		background-color: $white;
+		border: 2px solid $black;
+		color: $black;
+	}
+}
+
+%nu__playButton {
+	font-family: "Material Icons";
+	font-weight: normal;
+	font-style: normal;
+	font-size: 24px;
+	/* Preferred icon size */
+	display: inline-block;
+	line-height: 1;
+	text-transform: none;
+	letter-spacing: normal;
+	word-wrap: normal;
+	white-space: nowrap;
+	direction: ltr;
+
+	/* Support for all WebKit browsers. */
+	-webkit-font-smoothing: antialiased;
+	/* Support for Safari and Chrome. */
+	text-rendering: optimizeLegibility;
+
+	/* Support for Firefox. */
+	-moz-osx-font-smoothing: grayscale;
+
+	/* Support for IE. */
+	font-feature-settings: "liga";
+}

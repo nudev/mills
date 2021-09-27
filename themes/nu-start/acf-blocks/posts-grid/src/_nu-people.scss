@@ -1,0 +1,28 @@
+/* 
+
+*/
+
+.nu_posts-grid .nu__grid .grid-item.nu_people {
+	figure {
+		@include aspect-ratio(3, 4);
+	}
+
+	@extend %nu__grid_item_orientation;
+	@extend %nu__grid_item_cover_ratios;
+
+	.featured-tags {
+		width: 100%;
+		.tags {
+			font-weight: normal;
+			font-size: normal;
+		}
+		.cats {
+			font-size: smaller;
+		}
+	}
+
+	.nu_posts-grid-readmore {
+		display: block;
+		margin: $margin_4x 0 0 0;
+	}
+}

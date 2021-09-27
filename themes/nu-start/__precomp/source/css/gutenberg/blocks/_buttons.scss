@@ -1,0 +1,139 @@
+//
+//
+//
+
+/* 
+
+	? reset the wp/core styling
+	
+*/
+.wp-block-button__link {
+	// @extend %nu__buttonstyle;		// this is a harder reset i threw down and im trying to refactor
+
+	font-size: 0.875rem;
+	line-height: 1.25rem;
+	padding: 0.625rem 1rem;
+
+	// remove the default border radius from the buttons
+	border-radius: 0px;
+	border: 2px solid transparent;
+	&:hover,
+	&:focus,
+	&:active {
+		border: 2px solid transparent;
+	}
+}
+
+// primary element selector
+.wp-block-button {
+	// solid / "fill" style, also sort of the default.
+	// note that the fill class may not be applied to all buttons; consider this as an extend and then overriding it as needed.
+	&.is-style-fill, &:not(.is-style-outline) {
+		// inner element selector
+		.wp-block-button__link {
+			// adjust the terrible native hover state
+			&:hover,
+			&:focus,
+			&:active {
+				background-color: transparent;
+				color: currentColor;
+				border-color: currentColor;
+			}
+
+			// all our background and text color combos need this sort of special treatment...
+			&.has-background {
+				&.has-white-background-color {
+					&:hover,
+					&:focus,
+					&:active {
+						color: var(--wp--preset--color--white) !important;
+						background-color: black !important;
+						border-color: black !important;
+
+						//
+						background-color: transparent !important;
+						border-color: var(
+							--wp--preset--color--white
+						) !important;
+					}
+				}
+				&.has-red-background-color {
+					&:hover,
+					&:focus,
+					&:active {
+						border-color: var(--wp--preset--color--red);
+						color: var(--wp--preset--color--red);
+						background-color: transparent !important;
+					}
+				}
+			}
+		}
+	}
+	&.is-style-outline {
+		.wp-block-button__link {
+			&:hover,
+			&:focus,
+			&:active {
+				border: 2px solid black;
+				background-color: black;
+				color: white;
+			}
+			&.has-background {
+				background-color: transparent !important;
+				&:hover,
+				&:focus,
+				&:active {
+					background-color: transparent !important;
+				}
+
+				&.has-red-background-color {
+					border-color: var(--wp--preset--color--red) !important;
+					color: var(--wp--preset--color--red) !important;
+					&:hover,
+					&:focus,
+					&:active {
+						background-color: var(
+							--wp--preset--color--red
+						) !important;
+						color: var(--wp--preset--color--white) !important;
+					}
+				}
+			}
+		}
+	}
+	&.is-style-card {
+		margin: 0 0 0 $margin_2x;
+		flex: 1 1 auto;
+		&:first-child {
+			margin-left: 0; // squares up everything despite item margins
+		}
+		.wp-block-button__link {
+			padding: $margin_4x $margin_2x;
+			width: 100%;
+			text-align: left;
+		}
+	}
+	&.is-style-playhead {
+		.wp-block-button__link {
+			border: 2px solid transparent;
+			background-color: transparent;
+			color: currentColor;
+			padding: 0;
+			&:hover {
+				border-bottom: 2px solid currentColor;
+				background-color: transparent !important;
+			}
+		}
+		&:before {
+			color: $black;
+			color: currentColor;
+			content: "\e039";
+			display: inline-block;
+			vertical-align: middle;
+			margin: -5px $base-margin 0 0;
+			@extend %nu__playButton;
+			font-size: 2.8rem;
+			border: 2px solid transparent;
+		}
+	}
+}

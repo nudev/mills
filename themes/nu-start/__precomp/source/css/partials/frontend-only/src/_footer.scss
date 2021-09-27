@@ -1,0 +1,258 @@
+/**
+*		Site  Footer
+*/
+//
+footer.site-footer {
+	margin: $margin_8x 0 0 0;
+	@media screen and (max-width: 600px){
+		margin: $margin_4x 0 0 0;
+	}
+	color: rgba($white, 0.8);
+	background-color: $black;
+	border: none 0;
+	border-top: 1px solid $grey_4;
+	padding: $margin_4x 0;
+	border-top: 1px solid #99a3b0;
+	border-bottom: 1px solid #99a3b0;
+
+	// ? not sure about this right here
+	ul,
+	ol {
+		list-style-type: none;
+	}
+
+	.navlinks {
+		ul {
+			margin: 0;
+			padding: 0;
+		}
+		.sub-menu {
+			// padding: 0 0 0 $base-margin;
+		}
+	}
+
+	> section {
+		display: flex;
+		flex-flow: row wrap;
+		align-items: center;
+		margin: 0 auto;
+		width: 100%;
+		padding: 0 $margin_4x;
+		> div {
+			flex: 0 1 auto;
+			margin-left: $margin_8x;
+			&:first-child {
+				margin-left: 0;
+				flex: 1 1 auto;
+			}
+		}
+	}
+
+	.footer-siteinfo {
+		.address,
+		.contact,
+		.social {
+			margin: $base-margin 0 0 0;
+			@include font-size(0.875rem);
+
+			a {
+				color: rgba($white, 0.8);
+				border-bottom: 1px solid transparent;
+				font-weight: 300;
+				&:hover,
+				&:focus,
+				&:active {
+					//border-bottom: 1px solid rgba($white, 1);
+					color: rgba($white, 1);
+				}
+			}
+		}
+
+		.contact {
+			display: flex;
+			flex-flow: column nowrap;
+
+			span {
+				margin: 5px 0 0 0;
+				&:first-child {
+					margin: 0;
+				}
+			}
+		}
+
+		.social {
+			display: flex;
+			flex-flow: row nowrap;
+
+			.nu__customsvg {
+				margin: 0 0 0 $base-margin;
+			}
+		}
+	}
+
+	// todo: add this to some kind of dark mode?
+	// ? switch svg fill to white, or invert img
+	a.logo {
+		border-bottom: none 0;
+
+		svg path {
+			fill: $white;
+		}
+
+		img {
+			filter: invert(100%);
+		}
+	}
+
+	.navlinks {
+		// ?reset styles for any menu item
+		li {
+			margin: 0 0 ($base-margin * 0.5) 0;
+
+			&:last-of-type {
+				margin: 0;
+			}
+
+			// ? reset styles for any menu item link
+			a {
+				color: rgba($white, 0.75);
+				letter-spacing: 0.2px;
+				border: none 0;
+				border-left: 5px solid transparent;
+				padding-left: 5px;
+				font-weight: 300;
+				font-size: 0.875rem;
+
+				&:hover,
+				&:focus,
+				&:active {
+					border: none 0;
+					color: rgba($white, 1);
+					border-left: 5px solid rgba($white, 1);
+				}
+			}
+		}
+
+		// ? top level nav items are a row that may wrap
+		ul.menu {
+			display: flex;
+			flex-flow: row wrap;
+
+			// ? handle top level nav items
+			> li {
+				margin: 0 $margin_2x $margin_2x 0;
+
+				&.current_page_item,
+				&.current-page-ancestor {
+					> a {
+						color: rgba($white, 1);
+						border-left: 5px solid rgba($white, 1);
+					}
+				}
+
+				// ? top level nav links stand out
+				> a {
+					// TODO: big  font here
+					// text-transform: uppercase;
+					font-weight: bold;
+
+					&:hover,
+					&:focus,
+					&:active,
+					&.current-menu-item,
+					&.menu-item-is-open,
+					&.neu__dropdown--active,
+					&.current-menu-parent,
+					&.current-page-ancestor {
+						border-left: 5px solid rgba($white, 1);
+					}
+				}
+
+				&:last-of-type {
+					margin: 0;
+				}
+			}
+		}
+
+		// ? any level of menu item with children
+		// ?
+		li.menu-item-has-children {
+			> .sub-menu {
+				margin: $base-margin 0 0 0;
+
+				> li {
+					&.current_page_item {
+						> a {
+							color: rgba($white, 1);
+							border-left: 5px solid rgba($white, 1);
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.nu__footer-sidebar.widget_block {
+		form.wpforms-form {
+			.wpforms-field-container,
+			.wpforms-submit-container {
+				display: inline-block;
+				vertical-align: middle;
+				margin: 0;
+				padding: 0;
+			}
+
+			.wpforms-field {
+				padding: 0;
+				input {
+					min-height: 44px;
+				}
+			}
+
+			// just use their basic darken
+			button.wpforms-submit {
+				color: white !important;
+				background-color: var(--wp--preset--color--red) !important;
+				margin: 0 !important;
+				border: 2px solid transparent !important;
+				&:hover,
+				&:focus,
+				&:active {
+					background-color: white !important;
+					color: var(--wp--preset--color--red) !important;
+					border-color: var(--wp--preset--color--red) !important;
+				}
+			}
+			.wpforms-title {
+				font-size: 1rem;
+				font-weight: bold;
+			}
+			.wpforms-description {
+				font-size: 0.875rem;
+			}
+		}
+	}
+}
+
+// TODO: this is the bare minimum; before i look at the whole A/R scaffold
+@media screen and (max-width: 960px) {
+	footer.site-footer {
+		text-align: center;
+		> section,
+		.navlinks ul.menu {
+			justify-content: flex-start;
+			align-items: center;
+			flex-flow: column nowrap;
+		}
+	}
+}
+
+/**
+*		Global  Footer
+*/
+//
+#nu-global-footer a:hover,
+#nu-global-footer a:focus,
+#nu-global-footer a:active {
+	border: none 0;
+}
