@@ -9,12 +9,12 @@
 	 */
 	$(function () {
 
-		// 
+		//
 		$('.wp-block-nu-blocks-accordion').on('click', '.wp-block-nu-blocks-accordion-item', function(e){
 			$(e.currentTarget).siblings().find('details[open]').removeAttr('open');
 		});
 
-			
+
 
 		setTimeout(function(){
 
@@ -82,7 +82,7 @@
 		$('.wp-block-image.is-video-placeholder a').magnificPopup({
 			type: 'iframe'
 		});
-		
+
 		//
 		$(
 			".wp-block-button.is-style-playhead .wp-block-button__link"
@@ -99,7 +99,19 @@
 		});
 
 
+		//change bg header color on scroll
+		$(function() {
+	    var header = $(".header");
+	    $(window).scroll(function() {
+	        var scroll = $(window).scrollTop();
 
+	        if (scroll >= 100) {
+	            header.addClass("active");
+	        } else {
+	            header.removeClass("active");
+	        }
+	    });
+});
 
 
 	});
