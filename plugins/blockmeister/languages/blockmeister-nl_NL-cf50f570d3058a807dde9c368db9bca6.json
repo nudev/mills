@@ -1,0 +1,33 @@
+{
+  "translation-revision-date": "2020-08-27 20:03+0000",
+  "generator": "WP-CLI\/2.4.0",
+  "source": "src\/pattern-builder\/plugins\/selected-blocks-to-pattern.js",
+  "domain": "messages",
+  "locale_data": {
+    "messages": {
+      "": {
+        "domain": "messages",
+        "lang": "nl_NL",
+        "plural-forms": "nplurals=2; plural=n != 1;"
+      },
+      "Pattern '%s' created.": [
+        "Patroon '%s' toegevoegd."
+      ],
+      "Add to Block patterns": [
+        "Aan Blokpatroon toevoegen"
+      ],
+      "New pattern settings": [
+        "Nieuw patroon instellingen"
+      ],
+      "Pattern name": [
+        "Patroonnaam"
+      ],
+      "Create Pattern": [
+        "Maak Patroon"
+      ],
+      "Note: after the pattern has been created, you'll need to reload the page to make the pattern visible in the inserter.": [
+        "Notitie: nadat het patroon is aangemaakt dien je de pagina te herladen om het patroon in de blokinvoeger te zien."
+      ]
+    }
+  }
+}

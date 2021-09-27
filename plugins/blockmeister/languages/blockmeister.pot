@@ -1,0 +1,184 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: BlockMeister\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-09-01 09:46+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.4.2; wp-5.5"
+
+#: includes/Pattern_Builder/BlockMeister_Pattern_Category_Taxonomy.php:47
+msgid "Default"
+msgstr ""
+
+#: includes/Pattern_Builder/BlockMeister_Pattern_Category_Taxonomy.php:142
+msgid "Not editable"
+msgstr ""
+
+#: includes/Pattern_Builder/BlockMeister_Pattern_Category_Taxonomy.php:180
+msgid "Source"
+msgstr ""
+
+#: includes/Pattern_Builder/BlockMeister_Pattern_Category_Taxonomy.php:195
+msgid "User"
+msgstr ""
+
+#: includes/Pattern_Builder/BlockMeister_Pattern_Category_Taxonomy.php:198
+msgid "WordPress/Theme/Plugin"
+msgstr ""
+
+#: includes/Pattern_Builder/BlockMeister_Pattern_Category_Taxonomy.php:201
+msgid "Unknown"
+msgstr ""
+
+#: includes/Pattern_Builder/BlockMeister_Pattern_Keywords_Taxonomy.php:49
+#: includes/Pattern_Builder/Admin/BlockMeister_Pattern_List_Table.php:32
+msgid "Keywords"
+msgstr ""
+
+#: includes/Pattern_Builder/BlockMeister_Pattern_Keywords_Taxonomy.php:50
+msgid "Keyword"
+msgstr ""
+
+#: includes/Pattern_Builder/BlockMeister_Pattern_Keywords_Taxonomy.php:57
+msgid "Add New Keyword"
+msgstr ""
+
+#: includes/Pattern_Builder/BlockMeister_Pattern_Post_Type.php:35
+msgid "Patterns"
+msgstr ""
+
+#: includes/Pattern_Builder/BlockMeister_Pattern_Post_Type.php:36
+msgid "Pattern"
+msgstr ""
+
+#: includes/Pattern_Builder/BlockMeister_Pattern_Post_Type.php:37
+msgid "Add New"
+msgstr ""
+
+#: includes/Pattern_Builder/BlockMeister_Pattern_Post_Type.php:38
+msgid "Add New Pattern"
+msgstr ""
+
+#: includes/Pattern_Builder/BlockMeister_Pattern_Post_Type.php:39
+msgid "Edit Pattern"
+msgstr ""
+
+#: includes/Pattern_Builder/BlockMeister_Pattern_Post_Type.php:40
+msgid "New Pattern"
+msgstr ""
+
+#: includes/Pattern_Builder/BlockMeister_Pattern_Post_Type.php:41
+msgid "View Pattern"
+msgstr ""
+
+#: includes/Pattern_Builder/BlockMeister_Pattern_Post_Type.php:42
+msgid "View Patterns"
+msgstr ""
+
+#: includes/Pattern_Builder/BlockMeister_Pattern_Post_Type.php:43
+msgid "Search Patterns"
+msgstr ""
+
+#: includes/Pattern_Builder/BlockMeister_Pattern_Post_Type.php:44
+msgid "No pattern found."
+msgstr ""
+
+#: includes/Pattern_Builder/BlockMeister_Pattern_Post_Type.php:45
+msgid "No patterns found in Trash."
+msgstr ""
+
+#: includes/Pattern_Builder/BlockMeister_Pattern_Post_Type.php:46
+msgid "All Patterns"
+msgstr ""
+
+#: includes/Pattern_Builder/BlockMeister_Pattern_Post_Type.php:47
+msgid "Pattern Archives"
+msgstr ""
+
+#: includes/Pattern_Builder/BlockMeister_Pattern_Post_Type.php:48
+msgid "Pattern Attributes"
+msgstr ""
+
+#: includes/Pattern_Builder/BlockMeister_Pattern_Post_Type.php:49
+msgid "Insert into pattern"
+msgstr ""
+
+#: includes/Pattern_Builder/BlockMeister_Pattern_Post_Type.php:50
+msgid "Uploaded to this pattern"
+msgstr ""
+
+#: includes/Pattern_Builder/BlockMeister_Pattern_Post_Type.php:51
+msgid "Filter pattern list"
+msgstr ""
+
+#: includes/Pattern_Builder/BlockMeister_Pattern_Post_Type.php:52
+msgid "Patterns list navigation"
+msgstr ""
+
+#: includes/Pattern_Builder/BlockMeister_Pattern_Post_Type.php:53
+msgid "Patterns list"
+msgstr ""
+
+#: includes/Pattern_Builder/BlockMeister_Pattern_Post_Type.php:54
+msgid "Pattern published."
+msgstr ""
+
+#: includes/Pattern_Builder/BlockMeister_Pattern_Post_Type.php:55
+msgid "Pattern published privately."
+msgstr ""
+
+#: includes/Pattern_Builder/BlockMeister_Pattern_Post_Type.php:56
+msgid "Pattern reverted to draft."
+msgstr ""
+
+#: includes/Pattern_Builder/BlockMeister_Pattern_Post_Type.php:57
+msgid "Pattern scheduled."
+msgstr ""
+
+#: includes/Pattern_Builder/BlockMeister_Pattern_Post_Type.php:58
+msgid "Pattern updated."
+msgstr ""
+
+#: includes/Pattern_Builder/BlockMeister_Pattern_Post_Type.php:59
+msgid "Block Patterns"
+msgstr ""
+
+#: includes/Pattern_Builder/BlockMeister_Pattern_Post_Type.php:60
+msgid "Block Pattern"
+msgstr ""
+
+#: includes/Pattern_Builder/Admin/BlockMeister_Pattern_Editor.php:24
+msgid "Start writing or type / to choose a block to add to your block pattern"
+msgstr ""
+
+#: includes/Pattern_Builder/Admin/BlockMeister_Pattern_Editor.php:33
+msgid "Enter pattern name"
+msgstr ""
+
+#: includes/Pattern_Builder/Admin/BlockMeister_Pattern_List_Table.php:31
+msgid "Categories"
+msgstr ""
+
+#. Name of the plugin
+#. Author of the plugin
+msgid "BlockMeister"
+msgstr ""
+
+#. Description of the plugin
+msgid ""
+"Block pattern builder. Lets you easily and visually create custom block "
+"patterns."
+msgstr ""
+
+#. URI of the plugin
+msgid "https://wpblockmeister.com"
+msgstr ""
