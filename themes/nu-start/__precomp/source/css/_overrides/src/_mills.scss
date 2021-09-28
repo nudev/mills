@@ -1,5 +1,6 @@
 body {
   background: #F7F6F5;
+  letter-spacing: 0;
 }
 
 body.has-nu-global-header-footer.has-local-header > main {
@@ -24,7 +25,6 @@ header.active a.logo.logo--image svg {
 }
 
 
-
 div.mills-body {
   max-width:70%;
   width:100%;
@@ -36,14 +36,19 @@ div.mills-body {
   h1 {
     font-size: 60px;
     line-height: 60px;
+    margin-top: 66px;
+    
   }
   p {
     font-weight: 300;
     font-size: 20px;
     line-height: 28px;
     color: #404040;
+
   }
   figure.wp-block-pullquote {
+    padding:0;
+    margin:44px 0;
     blockquote {
 
       max-width:100%;
@@ -78,6 +83,8 @@ div.wp-block-cover__inner-container {
 
 
 a.wp-block-button__link {
+  margin-top:33px;
+  margin-bottom: 70px;
   &:hover,
   &:focus {
     background-color:transparent !important ;
