@@ -8,6 +8,13 @@ body.has-nu-global-header-footer.has-local-header > main {
 
 }
 
+header.header > .container {
+  @media screen and (max-width: 640px) {
+    height: 62px;
+  }
+
+}
+
 body.has-nu-global-header-footer header.header  {
   background-color: transparent;
   box-shadow: inherit;
