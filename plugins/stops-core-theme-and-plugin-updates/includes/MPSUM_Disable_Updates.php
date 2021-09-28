@@ -69,9 +69,21 @@ class MPSUM_Disable_Updates {
 			}
 		}
 
-		// Disable WordPress Updates
 		if (isset($core_options['core_updates']) && 'off' == $core_options['core_updates']) {
+			// Completely disable WordPress Updates
 			new MPSUM_Disable_Updates_WordPress();
+		} else {
+			// Core Development Updates
+			add_filter('allow_dev_auto_core_updates', '__return_'.(isset($core_options['core_updates']) && in_array($core_options['core_updates'], array('automatic', 'automatic_minor')) && isset($core_options['automatic_development_updates']) && 'on' == $core_options['automatic_development_updates'] ? 'true' : 'false'), PHP_INT_MAX - 10);
+
+			// Core Major Updates
+			add_filter('allow_major_auto_core_updates', '__return_'.(isset($core_options['core_updates']) && 'automatic' === $core_options['core_updates'] ? 'true' : 'false'), PHP_INT_MAX - 10);
+
+			// Core Minor Updates
+			add_filter('allow_minor_auto_core_updates', '__return_'.(isset($core_options['core_updates']) && in_array($core_options['core_updates'], array('automatic', 'automatic_minor')) ? 'true' : 'false'), PHP_INT_MAX - 10);
+
+			// Manually update / Disables Core Automatic Updates
+			// When the __return_false function is hooked to the three filters above, that means core automatic updates is disabled or it's a manually update
 		}
 
 		// Disable Plugin Updates
@@ -87,31 +99,6 @@ class MPSUM_Disable_Updates {
 		// Disable Translation Updates
 		if (isset($core_options['translation_updates']) && 'off' == $core_options['translation_updates']) {
 			new MPSUM_Disable_Updates_Translations();
-		}
-
-		// Enable Development Updates
-		if (isset($core_options['automatic_development_updates']) && 'on' == $core_options['automatic_development_updates']) {
-			add_filter('allow_dev_auto_core_updates', '__return_true', PHP_INT_MAX - 10);
-		} elseif (isset($core_options['automatic_development_updates']) && 'off' == $core_options['automatic_development_updates']) {
-			add_filter('allow_dev_auto_core_updates', '__return_false', PHP_INT_MAX - 10);
-		}
-
-		// Enable Core Updates Automatically
-		if (isset($core_options['core_updates']) && 'automatic' == $core_options['core_updates']) {
-			add_filter('allow_major_auto_core_updates', '__return_true', PHP_INT_MAX - 10);
-			add_filter('allow_minor_auto_core_updates', '__return_true', PHP_INT_MAX - 10);
-		}
-
-		// Disables Core Automatic Updates
-		if (isset($core_options['core_updates']) && 'automatic_off' == $core_options['core_updates']) {
-			add_filter('allow_major_auto_core_updates', '__return_false', PHP_INT_MAX - 10);
-			add_filter('allow_minor_auto_core_updates', '__return_false', PHP_INT_MAX - 10);
-			add_filter('allow_dev_auto_core_updates', '__return_false', PHP_INT_MAX - 10);
-		}
-
-		// Enable Core Minor Updates
-		if (isset($core_options['core_updates']) && 'automatic_minor' == $core_options['core_updates']) {
-			add_filter('allow_minor_auto_core_updates', '__return_true', PHP_INT_MAX - 10);
 		}
 
 		// Enable Translation Updates
@@ -152,7 +139,12 @@ class MPSUM_Disable_Updates {
 				add_filter('auto_update_plugin',  array( $this, 'automatic_updates_plugins' ), PHP_INT_MAX - 10, 2);
 			} elseif ('automatic_off' == $core_options['plugin_updates']) {
 				add_filter('auto_update_plugin',  '__return_false', PHP_INT_MAX - 10, 2);
+			} else { // if manually update option is selected then the auto_update_plugin filter should return boolean false
+				add_filter('auto_update_plugin',  '__return_false', 1, 2); // should be one of the most prioritized hooks (as early as it could)
 			}
+		} else {
+			// if none of the plugin updates setting is selected (it can happen on a fresh EUM install) also return boolean false for the auto_update_plugin filter
+			add_filter('auto_update_plugin',  '__return_false', 1, 2); // should be one of the most prioritized hooks (as early as it could)
 		}
 
 		// Enable Theme Auto-updates

@@ -229,7 +229,7 @@ class MPSUM_Admin_Ajax {
 				$options['theme_updates'] = 'automatic_off';
 				$options['plugin_updates'] = 'automatic_off';
 				$options['translation_updates'] = 'automatic_off';
-				$options['core_updates'] = 'automatic_off';
+				$options['core_updates'] = 'on'; // 'on' is for 'Manually update', it's different with 'automatic', since 'automatic_off' and 'on' is basically the same, so we use 'on' instead and remove the 'automatic_off', also the UI.
 				$options['automatic_development_updates'] = 'off';
 				break;
 			case 'automatic-updates-custom':
@@ -252,7 +252,7 @@ class MPSUM_Admin_Ajax {
 				}
 				break;
 			case 'core-updates':
-				if ('on' == $value) {
+				if ('on' == $value || 'automatic_off' == $value) {
 					$options['core_updates'] = 'on';
 				} elseif ('off' == $value) {
 					$options['core_updates'] = 'off';
@@ -260,8 +260,6 @@ class MPSUM_Admin_Ajax {
 					$options['core_updates'] = 'automatic';
 				} elseif ('automatic_minor' == $value) {
 					$options['core_updates'] = 'automatic_minor';
-				} elseif ('automatic_off' == $value) {
-					$options['core_updates'] = 'automatic_off';
 				}
 				break;
 			case 'plugin-updates':
@@ -351,6 +349,13 @@ class MPSUM_Admin_Ajax {
 					$options['plugin_auto_updates_notification_emails'] = 'on';
 				} else {
 					$options['plugin_auto_updates_notification_emails'] = 'off';
+				}
+				break;
+			case 'rollback-updates-notification-emails':
+				if ('off' === $value) {
+					$options['rollback_updates_notification_emails'] = 'off';
+				} else {
+					$options['rollback_updates_notification_emails'] = 'on';
 				}
 				break;
 			case 'notification-emails-send_now':
@@ -974,6 +979,8 @@ class MPSUM_Admin_Ajax {
 		delete_site_transient('eum_core_checked');
 		delete_site_transient('eum_themes_checked');
 		delete_site_transient('eum_plugins_checked');
+
+		delete_site_option('eum_unproven_updates_post_install');
 
 		$message = __('The plugin settings have now been reset.', 'stops-core-theme-and-plugin-updates');
 		return $message;
