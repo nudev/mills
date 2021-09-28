@@ -39,21 +39,21 @@ class NU__Starter
 					<button class="button cookies-accept">Accept and Continue</button>
 				</div>
 			';
-	
-	
-	
+
+
+
 			$return .= sprintf(
 				$guides['cookiewarning']
 				,'<p class="has-smaller-font-size">This website uses cookies and similar technologies to understand your use of our website and give you a better experience. By continuing to use the site or closing this banner without changing your cookie settings, you agree to our use of cookies and other technologies. To find out more about our use of cookies and how to change your settings, please go to our <a href="https://www.northeastern.edu/privacy-information" title="Privacy information" aria-label="Privacy information" target="_blank" rel="noopener noreferrer">Privacy Statement</a>.</p>'
 			);
-			
-	
-			
+
+
+
 			echo $return;
-			
+
 		}
 	}
-	
+
 
 	public static function __init(){
 		NU__Starter::$themeSettings['seo'] = get_field('analytics_&_seo_settings', 'option') ?: [];
@@ -74,7 +74,7 @@ class NU__Starter
 	//meta zipcode
 	public static function nu__customGeoTagMetaZip(){
 
-		if( empty(NU__Starter::$themeSettings['`seo`']['geotag']['zip_code']) ){
+		if( empty(NU__Starter::$themeSettings['seo']['geotag']['zip_code']) ){
 			return;
 		}
 		echo NU__Starter::$themeSettings['seo']['geotag']['zip_code'];
@@ -147,8 +147,8 @@ class NU__Starter
 
 			return $str;
 
-		} 
-		
+		}
+
 		else if ( !empty(NU__Starter::$themeSettings['search']['type_of_search']) == 'gcse' &  !empty(NU__Starter::$themeSettings['search']['enable_site_search']) == true ){
 
 			$str = '<div id="nu__sitesearch">';
@@ -218,7 +218,7 @@ class NU__Starter
 
 
 
-	
+
 	// if we want to use the university GATM
 	public static function nu__globalTagManagerBodyScript(){
 		if( empty(NU__Starter::$themeSettings['dev']['build_status']) ){
