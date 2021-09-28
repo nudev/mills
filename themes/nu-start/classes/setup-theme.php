@@ -12,28 +12,28 @@ class SetupTheme
 	// ?
 	public static function _init(){
 
-		// 
+		//
 		add_action( 'wp_enqueue_scripts', 'SetupTheme::enqueue_scripts' );
 
-		// 
+		//
 		add_action( 'admin_enqueue_scripts', 'SetupTheme::admin_enqueue_scripts' );
-		
-		// 
+
+		//
 		add_action( 'after_setup_theme', 'SetupTheme::after_setup_theme' );
 
-		// 
+		//
 		add_action( 'enqueue_block_editor_assets', 'SetupTheme::block_editor_scripts' );
-		
-		// 
+
+		//
 		add_action( 'init', 'SetupTheme::init' );
-		
-		// 
+
+		//
 		add_action( 'acf/init', 'SetupTheme::_handle_acf_init' );
 
-		// 
+		//
 		add_action( 'widgets_init', 'SetupTheme::nu__register_sidebars' );
-		
-		// 
+
+		//
 		SetupTheme::clean_head();
 	}
 
@@ -46,18 +46,18 @@ class SetupTheme
 
 	// ?
 	public static function  block_editor_scripts(){
-		
+
 		// fonts only loaded in the block editor (for blocks)
 		wp_enqueue_style( 'nu-block-editor-fonts', get_template_directory_uri() . '/__precomp/build/css/fonts.css', array(), filemtime( get_template_directory() . '/__precomp/build/css/fonts.css' ) );
 
 		// stylesheet only loaded in the block editor (for blocks)
 		// ? this lets us "ram in" a stylesheet; but we already have the hook in add_theme_support( 'editor-styles' );
 		// wp_enqueue_style( 'nu-blocks-styles', get_template_directory_uri() . '/__precomp/build/css/blocks-styles.css', [], filemtime( get_template_directory() . '/__precomp/build/css/blocks-styles.css' ) );
-		
+
 		// scripts only loaded in the block editor (for blocks)
 		wp_enqueue_script( 'nu-block-editor', get_template_directory_uri() . '/__precomp/build/js/editor-min.js', array( 'wp-blocks' ), filemtime( get_template_directory() . '/__precomp/build/js/editor-min.js' ), true );
 	}
-	
+
 
 	// ?
 	public static function after_setup_theme(){
@@ -80,7 +80,7 @@ class SetupTheme
 
 			return $paths;
 		});
-		
+
 
 		// add / remove theme supports
 		SetupTheme::_manage_theme_supports();
@@ -163,7 +163,7 @@ class SetupTheme
 
 
 	}
-	
+
 
 	// ?
 	public static function _do_enqueueScripts(){
@@ -178,13 +178,13 @@ class SetupTheme
 		);
 
 		// register theme main menu nav scripts
-		wp_register_script(
-			'nav'
-			, get_template_directory_uri() . '/__precomp/build/js/nav-min.js'
-			, array()
-			, filemtime(get_template_directory() . '/__precomp/build/js/nav-min.js')
-			, true
-		);
+		// wp_register_script(
+		// 	'nav'
+		// 	, get_template_directory_uri() . '/__precomp/build/js/nav-min.js'
+		// 	, array()
+		// 	, filemtime(get_template_directory() . '/__precomp/build/js/nav-min.js')
+		// 	, true
+		// );
 
 		// register magnific scripts
 		wp_register_script(
@@ -196,19 +196,19 @@ class SetupTheme
 		);
 
 		// register select2 core scripts
-		wp_register_script(
-			'select2'
-			, get_template_directory_uri() . '/__precomp/vendor/js/select2.min.js'
-			,array()
-			,false
-			,true
-		);
+		// wp_register_script(
+		// 	'select2'
+		// 	, get_template_directory_uri() . '/__precomp/vendor/js/select2.min.js'
+		// 	,array()
+		// 	,false
+		// 	,true
+		// );
 
-		wp_enqueue_script( 'select2' );
+		//wp_enqueue_script( 'select2' );
 		wp_enqueue_script( 'magnific' );
-		wp_enqueue_script( 'nav' );
-		
-		
+		//wp_enqueue_script( 'nav' );
+
+
 		self::localize_developer_panel();
 	}
 
@@ -232,11 +232,11 @@ class SetupTheme
 			'devpanel' 			=> 	$devPanel,
 			'active-theme'		=>	$current_theme->get('Name'),
 		);
-		
+
 		wp_enqueue_script( 'main' );
 
 		wp_localize_script( 'main', '$theme_info', $themeInfo );
-		
+
 	}
 
 	// ?
@@ -244,26 +244,26 @@ class SetupTheme
 
 
 		// deregister default jQuery
-		wp_deregister_script('jquery'); 
+		wp_deregister_script('jquery');
 		// register jQuery v3.4.1
 		wp_enqueue_script('jquery', get_template_directory_uri().'/__precomp/vendor/js/jquery.min.js', array(), null, true);
 		// register fonts
 		wp_enqueue_style( 'nu-site-fonts', get_template_directory_uri() . '/__precomp/build/css/fonts.css', array(), filemtime( get_template_directory() . '/__precomp/build/css/fonts.css' ) );
 		// register magnific popup
-		wp_register_style(
-			'magnific'
-			, get_template_directory_uri() . '/__precomp/vendor/css/magnific-popup.css'
-		);
+		// wp_register_style(
+		// 	'magnific'
+		// 	, get_template_directory_uri() . '/__precomp/vendor/css/magnific-popup.css'
+		// );
 		// register select2 (core styles)
-		wp_register_style(
-			'select2'
-			, get_template_directory_uri() . '/__precomp/vendor/css/select2.min.css'
-		);
-		// register select2 (bootstrap 4 theme styles)
-		wp_register_style(
-			'select2-theme'
-			, get_template_directory_uri() . '/__precomp/vendor/css/select2-bootstrap4.min.css'
-		);
+		// wp_register_style(
+		// 	'select2'
+		// 	, get_template_directory_uri() . '/__precomp/vendor/css/select2.min.css'
+		// );
+		// // register select2 (bootstrap 4 theme styles)
+		// wp_register_style(
+		// 	'select2-theme'
+		// 	, get_template_directory_uri() . '/__precomp/vendor/css/select2-bootstrap4.min.css'
+		// );
 
 		// register main theme stylesheet
 		wp_register_style(
@@ -275,17 +275,17 @@ class SetupTheme
 
 
 		// enqueue the registered styles
-		wp_enqueue_style( 'magnific' );
-		wp_enqueue_style( 'select2' );
-		wp_enqueue_style( 'select2-theme' );
+		//wp_enqueue_style( 'magnific' );
+		//wp_enqueue_style( 'select2' );
+		//wp_enqueue_style( 'select2-theme' );
 		wp_enqueue_style( 'main' );
 
 
 	}
-	
+
 
 	// ?
-	public static function admin_enqueue_scripts(){		
+	public static function admin_enqueue_scripts(){
 
 		//
 		wp_register_style(
@@ -332,6 +332,9 @@ class SetupTheme
 		remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
 
 	}
+
+
+
 
 
 
@@ -386,9 +389,9 @@ class SetupTheme
 		add_theme_support( 'custom-spacing' );
 		remove_theme_support( 'core-block-patterns' ); 					// remove the "patterns" library
 
-		/* 
+		/*
 			* this only goes in the block editor!
-			! NOTE 
+			! NOTE
 			? From WP Documentation:
 
 			"To make sure your styles are applied only to the content of the editor,
@@ -399,8 +402,8 @@ class SetupTheme
 		 */
 		add_theme_support( 'editor-styles' );
 		add_editor_style( get_template_directory_uri() . '/__precomp/build/css/editor-style.css' );
-		
-		/* 
+
+		/*
 			! Note see @link '/theme.json' for most of what was here
 		*/
 	}

@@ -8,23 +8,23 @@
 if( function_exists('acf_add_options_page') ) {
 
 	// ? cleaner refactored theme settings to reduce how many page reloads initial setup will take
-	acf_add_options_page(array(
-		'page_title' 	=> 'NU Start',
-		'menu_title'	=> 'NU Start',
-		'menu_slug' 	=> 'nu_start_settings',
-		'capability'	=> 'manage_options',
-		'position' 		=> "3",
-	));
-	acf_add_options_sub_page(array(
-		'page_title' 	=> 'Theme Settings',
-		'menu_title'	=> 'Theme Settings',
-		'parent_slug'	=> 'nu_start_settings',
-	));
-	acf_add_options_sub_page(array(
-		'page_title' 	=> 'Brand',
-		'menu_title'	=> 'Brand',
-		'parent_slug'	=> 'nu_start_settings',
-	));
+	// acf_add_options_page(array(
+	// 	'page_title' 	=> 'NU Start',
+	// 	'menu_title'	=> 'NU Start',
+	// 	'menu_slug' 	=> 'nu_start_settings',
+	// 	'capability'	=> 'manage_options',
+	// 	'position' 		=> "3",
+	// ));
+	// acf_add_options_sub_page(array(
+	// 	'page_title' 	=> 'Theme Settings',
+	// 	'menu_title'	=> 'Theme Settings',
+	// 	'parent_slug'	=> 'nu_start_settings',
+	// ));
+	// acf_add_options_sub_page(array(
+	// 	'page_title' 	=> 'Brand',
+	// 	'menu_title'	=> 'Brand',
+	// 	'parent_slug'	=> 'nu_start_settings',
+	// ));
 
 
 
@@ -84,7 +84,7 @@ if( function_exists('acf_add_options_page') ) {
 		'menu_title'	=> 'Search',
 		'parent_slug'	=> 'nu_settings',
 	));
-	
+
 }
 
 

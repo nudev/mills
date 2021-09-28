@@ -73,7 +73,6 @@ div.mills-body {
     padding:0;
     margin:44px 0;
     blockquote {
-
       max-width:100%;
       margin: 0 0 0 32px;
       p {
@@ -122,15 +121,36 @@ a.wp-block-button__link {
 
 div.wp-block-columns {
   &.mills_inner-container {
+    @media screen and (max-width: 781px) {
+      margin-bottom: -20vw;
+      position: relative;
+      margin-top:200px;
+    }
     @media screen and (max-width: 640px) {
-      margin-bottom: 28vw;
+      margin-top: 0;
     }
 
 
     & > div.wp-block-column {
+      &:nth-child(1){
+        @media screen and (max-width: 781px) {
+          max-width: 40%;
+          float: left;
+        }
+      }
       &:nth-child(2){
         @media screen and (max-width: 1024px) {
           flex-basis: 65% !important;
+        }
+        @media screen and (max-width: 781px) {
+          display: none !important;
+        }
+      }
+      &:nth-child(3){
+        @media screen and (max-width: 781px) {
+          flex-basis: 50% !important;
+          margin: 0;
+
         }
       }
     }
