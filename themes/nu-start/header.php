@@ -2,9 +2,7 @@
 <html <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
-	<title><?php wp_title(''); ?><?php if(wp_title('', false)) {  } ?></title>
 	<meta name="title" content="<?php wp_title(''); ?><?php if(wp_title('', false)) {  } ?>" />
-	<meta name="description" content="<?php bloginfo('description');?>">
 	<meta name="author" content="Northeastern University, https://www.northeastern.edu" />
 	<meta name="copyright" content="<?=date('Y');?>">
 	<meta name="language" content="english" />

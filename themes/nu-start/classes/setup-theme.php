@@ -284,6 +284,8 @@ class SetupTheme
 	}
 
 
+
+
 	// ?
 	public static function admin_enqueue_scripts(){
 
@@ -427,6 +429,14 @@ class SetupTheme
 }
 SetupTheme::_init();
 
+add_filter('style_loader_tag', 'my_style_loader_tag_filter', 10, 2);
 
+function my_style_loader_tag_filter($html, $handle) {
+		if ($handle === 'nu-site-fonts') {
+				return str_replace("rel='stylesheet'",
+						"rel='preload' as='font' type='font/css' crossorigin='anonymous'", $html);
+		}
+		return $html;
+}
 
 ?>
