@@ -2,15 +2,17 @@
 <html <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
+	<title><?php wp_title(''); ?><?php if(wp_title('', false)) {  } ?></title>
+	<meta name="title" content="<?php wp_title(''); ?><?php if(wp_title('', false)) {  } ?>" />
 	<meta name="description" content="<?php bloginfo('description');?>">
-	<meta name="author" content="Northeastern University, http://www.northeastern.edu" />
+	<meta name="author" content="Northeastern University, https://www.northeastern.edu" />
 	<meta name="copyright" content="<?=date('Y');?>">
 	<meta name="language" content="english" />
 	<meta name="zipcode" content="<?php echo NU__Starter::nu__customGeoTagMetaZip(); ?>" />
 	<meta name="city" content="<?php echo NU__Starter::nu__customGeoTagMetaCity(); ?>"/>
 	<meta name="state" content="<?php echo NU__Starter::nu__customGeoTagMetaState(); ?>"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-
+	<link href="//www.google-analytics.com" rel="dns-prefetch">
 	<?php
 		// todo: existing favicon stuff is super messy and old, so its wrapped up in a function
 		echo NU__Starter::_get_all_favicons();
@@ -45,9 +47,9 @@
 </head>
 <body <?php body_class($bodyClasses); ?>>
 <?php
-	
+
 	// ? enables hooking in content right after body opens (think for scripts etc)
-	wp_body_open(); 
+	wp_body_open();
 
 	// if we want to use the university GATM
 	NU__Starter::nu__globalTagManagerBodyScript();
